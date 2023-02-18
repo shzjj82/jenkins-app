@@ -1,5 +1,10 @@
 pipeline {
-    agent { any { image 'node:12.16.2' args '-v $HOME/.m2:root/.m2' } }
+    agent {
+        docker {
+            image 'node:10.20.1-alpine3.11'
+            args '-v $HOME/.m2:/root/.m2'
+        }
+    }
     stages {
         stage('Build') {
             steps {
