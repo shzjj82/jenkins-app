@@ -5,14 +5,9 @@ pipeline {
         }
     }
     stages {
-        stage('install') {
+        stage('Build') {
             steps {
                sh "npm install"
-            }
-        }
-        stage('build') {
-            steps {
-               sh "npm run build"
             }
         }
     }
